@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>3D Thick Cloth Cut Simulation</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <div class="sidebar">
+      <h1>3D Cloth Cut Sim</h1>
+
+      <!-- Reset -->
+      <button id="reset">Reset Cloth</button>
+
+      <!-- Tension control -->
+      <div class="control">
+        <label for="tension">
+          Tension: <span id="tensionValue">100%</span>
+        </label>
+        <input
+          type="range"
+          id="tension"
+          min="0"
+          max="100"
+          value="100"
+        />
+        <small>0% = loose cloth, 100% = tight cloth</small>
+      </div>
+
+      <!-- View angle -->
+      <div class="control">
+        <label for="viewAngle">
+          View Angle: <span id="viewAngleValue">0°</span>
+        </label>
+        <input
+          type="range"
+          id="viewAngle"
+          min="-180"
+          max="180"
+          value="0"
+        />
+        <small>Rotate the cloth in 3D</small>
+      </div>
+
+      <!-- Gravity toggle -->
+      <div class="control">
+        <label>
+          <input type="checkbox" id="gravityToggle" checked />
+          Enable Gravity
+        </label>
+        <small>Turn gravity on or off</small>
+      </div>
+
+      <!-- Gravity strength -->
+      <div class="control">
+        <label for="gravityStrength">
+          Gravity Strength: <span id="gravityStrengthValue">100%</span>
+        </label>
+        <input
+          type="range"
+          id="gravityStrength"
+          min="0"
+          max="200"
+          value="100"
+        />
+        <small>0% = no gravity, 200% = very strong gravity</small>
+      </div>
+
+      <!-- Cut depth -->
+      <div class="control">
+        <label for="cutDepth">
+          Cut Depth: <span id="cutDepthValue">100%</span>
+        </label>
+        <input
+          type="range"
+          id="cutDepth"
+          min="0"
+          max="100"
+          value="100"
+        />
+        <small>0% = surface cut, 100% = full thickness cut</small>
+      </div>
+
+      <p class="hint">
+        Drag on the cloth to cut.<br />
+        Use tension, gravity & cut depth to control behaviour.<br />
+        Rotate with View Angle to see thickness.
+      </p>
+    </div>
+
+    <canvas id="clothCanvas"></canvas>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
